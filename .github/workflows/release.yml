@@ -83,7 +83,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Download payload
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4.1.7
       with:
         name: tmp.${{ matrix.runtime }}-build
     
@@ -156,7 +156,7 @@ jobs:
         setCommonVars: true
 
     - name: Download signed payload
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4.1.7
       with:
         name: ${{ matrix.runtime }}-payload-sign
     
@@ -192,7 +192,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Download unsigned package
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4.1.7
       with:
         name: tmp.${{ matrix.runtime }}-pack
         path: pkg
@@ -402,7 +402,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Download artifacts
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4.1.7
       with:
         name: linux-build
         path: artifacts
@@ -470,7 +470,7 @@ jobs:
           setCommonVars: true
 
       - name: Download artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: ${{ matrix.component.artifact }}
 
@@ -529,7 +529,7 @@ jobs:
           setCommonVars: true
       
       - name: Download artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
 
       - name: Archive macOS payload and symbols
         run: |
